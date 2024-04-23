@@ -1,5 +1,5 @@
 ---
-title: "Final Project"
+title: "Final Project by Cy Hwang"
 image: 'penguin.jpg'
 about:
   template: jolla
