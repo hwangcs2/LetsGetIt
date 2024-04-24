@@ -6,13 +6,13 @@ format:
 
 ---
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 # renv::init()
 ```
 
 # Penguin Size and Mass
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(palmerpenguins)
 library(dplyr)
 library(dbplyr)
@@ -55,11 +55,11 @@ df %>%
   geom_smooth(method = "lm")
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 
 dbDisconnect(con, shutdown = TRUE)
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 # renv::snapshot()
 ```
