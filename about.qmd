@@ -25,7 +25,7 @@ dbWriteTable(con, "penguins", penguins)
 df <- tbl(con, "penguins")
 ```
 
-```{r, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
 df %>%
   group_by(species, sex) %>%
   summarise(
@@ -40,7 +40,7 @@ df %>%
 
 # Penguin Size vs Mass by Species
 
-```{r,message=FALSE}
+```{r,message=FALSE, warning=FALSE}
 df %>%
   ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +
   geom_point() + 

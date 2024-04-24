@@ -6,11 +6,13 @@ format:
 
 ---
 
-```{r}
+```{r,message=FALSE,warning=FALSE}
 library(reticulate)
 ```
 
 ```{python}
+#| message: false
+#| warning: false
 from palmerpenguins import penguins
 from pandas import get_dummies
 import numpy as np
@@ -20,23 +22,15 @@ from sklearn import preprocessing
 ```
 
 ```{python}
+#| message: false
+#| warning: false
 import duckdb
 import pandas as pd
 from palmerpenguins import load_penguins
-
-# Load the penguins DataFrame using the load_penguins function
 penguins_df = load_penguins()
-
-# Create a DuckDB connection
 con = duckdb.connect(database=':memory:', read_only=False)
-
-# Register the DataFrame as a DuckDB table
 con.register('penguins_table', penguins_df)
-
-# Query the table and drop NA values
 df = con.execute("SELECT * FROM penguins_table").fetchdf().dropna()
-
-# Display the first few rows of the DataFrame
 df.head(3)
 
 ```
